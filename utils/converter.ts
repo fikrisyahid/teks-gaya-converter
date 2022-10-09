@@ -1,4 +1,4 @@
-const converter = (input) => {
+const converter = (input: String) => {
   let response = '';
   return response;
 }
