@@ -1,5 +1,5 @@
 const wordFetcher = (input: String) => {
-  const response: String[] = [];
+  const response: string[] = [];
   let tempStr = "";
   for (let i = 0; i < input.length; i++) {
     if (input[i] !== " ") {
