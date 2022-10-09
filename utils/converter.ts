@@ -8,11 +8,12 @@ const converter = (input: String) => {
     const key = word.toLowerCase();
     if (wordData[key]) {
       const index = Math.floor(Math.random() * wordData[key].length);
-      response += `${wordData[key][index]} `;
+      response += `${wordData[key][index]}`;
     }
     if (!wordData[key]) {
-      response += `${word} `;
+      response += `${word}`;
     }
+    response += ' ';
   });
   return response;
 };
