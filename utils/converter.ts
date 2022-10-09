@@ -2,18 +2,19 @@ import wordData from "./word-data";
 import wordFetcher from "./word-fetcher";
 
 const converter = (input: String) => {
-  let response = '';
+  let response = "";
   const words = wordFetcher(input);
   words.forEach((word) => {
-    if (wordData[word]) {
-      const index = Math.floor(Math.random() * wordData[word].length);
-      response += `${wordData[word][index]} `;
+    const key = word.toLowerCase();
+    if (wordData[key]) {
+      const index = Math.floor(Math.random() * wordData[key].length);
+      response += `${wordData[key][index]} `;
     }
-    if (!wordData[word]) {
+    if (!wordData[key]) {
       response += `${word} `;
     }
   });
   return response;
-}
- 
+};
+
 export default converter;
