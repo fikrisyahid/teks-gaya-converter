@@ -9,37 +9,34 @@ const Navbar = () => {
 
   return (
     <MainGrid>
-      <Grid container item direction="column">
-        <Grid
-          container
-          item
-          spacing={2}
-          justifyContent="center"
-          alignItems="center"
-          xs={6}
-        >
-          <Grid item>
-            <Button
-              size="large"
-              variant="text"
-              color="primary"
-              sx={{ color: "white" }}
-              onClick={() => router.push("/")}
-            >
-              Home
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button
-              size="large"
-              variant="text"
-              color="primary"
-              sx={{ color: "white" }}
-              onClick={() => router.push("/about")}
-            >
-              About
-            </Button>
-          </Grid>
+      <Grid
+        container
+        item
+        spacing={2}
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Grid item>
+          <Button
+            size="large"
+            variant="text"
+            color="primary"
+            sx={{ color: "white" }}
+            onClick={() => router.push("/")}
+          >
+            Home
+          </Button>
+        </Grid>
+        <Grid item>
+          <Button
+            size="large"
+            variant="text"
+            color="primary"
+            sx={{ color: "white" }}
+            onClick={() => router.push("/about")}
+          >
+            About
+          </Button>
         </Grid>
       </Grid>
     </MainGrid>

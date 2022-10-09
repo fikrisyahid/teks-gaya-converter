@@ -11,6 +11,7 @@ const MainGrid = ({ children, sx }: MainGridProps) => {
     <Grid
       container
       item
+      direction="column"
       sx={{
         marginBottom: 3,
         backgroundColor: "#172731",
