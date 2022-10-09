@@ -20,7 +20,7 @@ const Home: NextPage = () => {
     <Grid container item>
       <MainGrid>
         <Grid container item mb={3}>
-          <Grid container item direction="column" xs={6} spacing={2}>
+          <Grid container item direction="column" xs={6} spacing={2} paddingRight={3}>
             <Grid container item justifyContent="center">
               <Grid item>
                 <Typography variant="h4" fontWeight={700} color="white">
@@ -28,7 +28,7 @@ const Home: NextPage = () => {
                 </Typography>
               </Grid>
             </Grid>
-            <Grid item marginRight={3}>
+            <Grid item >
               <TextField
                 multiline
                 fullWidth
@@ -44,7 +44,7 @@ const Home: NextPage = () => {
               />
             </Grid>
           </Grid>
-          <Grid container item direction="column" xs={6} spacing={2}>
+          <Grid container item direction="column" xs={6} spacing={2} paddingLeft={3}>
             <Grid container item justifyContent="center">
               <Grid item>
                 <Typography variant="h4" fontWeight={700} color="white">
@@ -52,7 +52,7 @@ const Home: NextPage = () => {
                 </Typography>
               </Grid>
             </Grid>
-            <Grid item marginLeft={3}>
+            <Grid item>
               <TextField
                 multiline
                 fullWidth
