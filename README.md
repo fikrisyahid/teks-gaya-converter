@@ -6,7 +6,7 @@ Ubah gaya penulisanmu menjadi gaya penulisan bapack-bapack atau jamet FB 2009
 ![Jamet FB 2009 demo](https://i.ibb.co/pddGJHv/Screen-Shot-2022-10-10-at-15-22-25.png)
 
 ## Demo App
-Klik di sini untuk akses demo: [Teks Gaya Converter](https://teks-bapak-converter.vercel.app/)
+Klik di sini untuk akses demo: [Teks Gaya Converter](https://teks-gaya-converter.vercel.app/)
 
 ## Cara menjalankan aplikasi secara lokal
 
