@@ -1,14 +1,13 @@
 import MainGrid from "./MainGrid";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
-import Link from "next/link";
 import { useRouter } from "next/router";
 
 const Navbar = () => {
   const router = useRouter();
 
   return (
-    <MainGrid>
+    <MainGrid sx={{padding: 0}}>
       <Grid
         container
         item
