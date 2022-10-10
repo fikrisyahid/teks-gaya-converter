@@ -1,4 +1,3 @@
-Made just for fun
 ## Deskripsi
 Ubah gaya penulisanmu menjadi gaya penulisan bapack-bapack atau jamet FB 2009
 
@@ -9,22 +8,26 @@ Ubah gaya penulisanmu menjadi gaya penulisan bapack-bapack atau jamet FB 2009
 ## Demo App
 Klik di sini untuk akses demo: [Teks Gaya Converter](https://teks-bapak-converter.vercel.app/)
 
-## How to run locally
-Run these commands on CMD or terminal
-> git clone https://github.com/fikrisyahid/teks-gaya-converter.git
+## Cara menjalankan aplikasi secara lokal
 
-> cd teks-gaya-converter
+> Pastikan kamu sudah menginstall nodejs dan npm / yarn sudah bisa dijalankan melalui CMD atau terminal
 
-if you use npm
+Jalankan perintah berikut pada CMD atau terminal
 
-> npm install
+```git clone https://github.com/fikrisyahid/teks-gaya-converter.git```
 
-> npm run dev
+`cd teks-gaya-converter`
 
-or if you use Yarn
+`jika kamu menggunakan npm`
 
-> yarn
+`npm install`
 
-> yarn dev
+`npm run dev`
 
-Open `http://localhost:3000` in your browser
+jika kamu menggunakan yarn
+
+`yarn`
+
+`yarn dev`
+
+Buka `http://localhost:3000` di browser
