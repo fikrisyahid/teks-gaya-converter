@@ -1,8 +1,16 @@
-import wordData from "./word-data";
+import bapackWordData from "./word-data/bapack-word";
+import jametWordData from "./word-data/jamet-word";
 import wordFetcher from "./word-fetcher";
 
-const converter = (input: String) => {
+const converter = (input: string, mode: string) => {
   let response = "";
+  let wordData = {};
+  if (mode === "1") {
+    wordData = bapackWordData;
+  }
+  if (mode === "2") {
+    wordData = jametWordData;
+  }
   const words = wordFetcher(input);
   words.forEach((word) => {
     const key = word.toLowerCase();
@@ -13,7 +21,7 @@ const converter = (input: String) => {
     if (!wordData[key]) {
       response += `${word}`;
     }
-    response += ' ';
+    response += " ";
   });
   return response;
 };

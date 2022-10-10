@@ -8,14 +8,22 @@ import MainGrid from "../components/MainGrid";
 import converter from "../utils/converter";
 import Head from "next/head";
 import MenuItem from "@mui/material/MenuItem";
+import Alert from "../components/Alert";
 
 const Home: NextPage = () => {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
   const [mode, setMode] = useState("0");
+  const [alertOpen, setAlertOpen] = useState(false);
+  const [alertMessage, setAlertMessage] = useState("");
 
   const handleConvert = () => {
-    const response = converter(input);
+    if (mode === "0") {
+      setAlertMessage("Pilih mode terlebih dahulu");
+      setAlertOpen(true);
+      return;
+    }
+    const response = converter(input, mode);
     setOutput(response);
   };
 
@@ -24,6 +32,11 @@ const Home: NextPage = () => {
       <Head>
         <title>Home</title>
       </Head>
+      <Alert
+        open={alertOpen}
+        message={alertMessage}
+        handleCloseDialog={() => setAlertOpen(false)}
+      />
       <Grid container item>
         <MainGrid>
           <Grid container item mb={3}>
