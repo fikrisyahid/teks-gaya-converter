@@ -9,6 +9,7 @@ import Head from "next/head";
 import MenuItem from "@mui/material/MenuItem";
 import Alert from "../components/Alert";
 import { bapackConverter, jametConverter } from "../utils/converter";
+import { useIsomorphicLayoutEffect } from "../utils/isomorphicLayout";
 
 const Home: NextPage = () => {
   const [input, setInput] = useState("");
@@ -18,7 +19,7 @@ const Home: NextPage = () => {
   const [alertMessage, setAlertMessage] = useState("");
 
   // Get value from session storage
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const sessionInput = sessionStorage.getItem("input");
     const sessionOutput = sessionStorage.getItem("output");
     const sessionMode = sessionStorage.getItem("mode");
