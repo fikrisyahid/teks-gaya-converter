@@ -8,9 +8,9 @@ const jametConverter = (input: string) => {
     const key = word.toLowerCase();
 
     // Convert per word
-    if (jametWordData.word[key]) {
-      const index = Math.floor(Math.random() * jametWordData.word[key].length);
-      word = jametWordData.word[key][index];
+    if (jametWordData.words[key]) {
+      const index = Math.floor(Math.random() * jametWordData.words[key].length);
+      word = jametWordData.words[key][index];
     }
 
     // Convert per character
@@ -22,11 +22,11 @@ const jametConverter = (input: string) => {
     }
     for (let i = 0; i < word.length; i++) {
       const key = word[i].toLowerCase();
-      if (jametWordData.character[word[i]]) {
+      if (jametWordData.characters[word[i]]) {
         const index = Math.floor(
-          Math.random() * jametWordData.character[key].length
+          Math.random() * jametWordData.characters[key].length
         );
-        response += jametWordData.character[key][index];
+        response += jametWordData.characters[key][index];
         continue;
       }
       response += word[i];

@@ -1,9 +1,9 @@
 const jametWordData = {
-  word: {
+  words: {
     sayang: ["syank", "syanc", "syanck"],
     ya: ['yach']
   },
-  character: {
+  characters: {
     a: ["4", "@"],
     b: ["13"],
     r: ["12"],

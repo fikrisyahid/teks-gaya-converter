@@ -1,5 +1,5 @@
 const bapackWordData = {
-  word: {
+  words: {
     gak: ["gk", "Gk", "gK", "gg", "Gg", "gG"],
     tapi: ["tp", "tP", "Tp"],
     saya: ["sy", "Sy", "sY"],
@@ -9,7 +9,7 @@ const bapackWordData = {
     gmn: ["gmn", "Gmn", "gMn", "gmN"],
     maksud: ["mksud", "Mksud", "mKsud", "mkSud", "mksUd", "mksuD"],
   },
-  character: {},
+  characters: {},
 };
 
 export default bapackWordData;
