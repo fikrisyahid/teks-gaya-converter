@@ -16,7 +16,6 @@ Jalankan perintah berikut pada CMD atau terminal
 
 ```
 git clone https://github.com/fikrisyahid/teks-gaya-converter.git
-
 cd teks-gaya-converter
 ```
 Jika kamu menggunakan npm
