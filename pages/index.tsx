@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
@@ -16,6 +16,24 @@ const Home: NextPage = () => {
   const [mode, setMode] = useState("0");
   const [alertOpen, setAlertOpen] = useState(false);
   const [alertMessage, setAlertMessage] = useState("");
+
+  // Get value from session storage
+  useLayoutEffect(() => {
+    const sessionInput = sessionStorage.getItem("input");
+    const sessionOutput = sessionStorage.getItem("output");
+    if (sessionInput) {
+      setInput(sessionInput);
+    }
+    if (sessionOutput) {
+      setOutput(sessionOutput);
+    }
+  }, []);
+
+  // Set value to session storage
+  useEffect(() => {
+    sessionStorage.setItem("input", input);
+    sessionStorage.setItem("output", output);
+  }, [input, output]);
 
   const handleConvert = () => {
     if (mode === "0") {
