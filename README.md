@@ -14,20 +14,20 @@ Klik di sini untuk akses demo: [Teks Gaya Converter](https://teks-bapak-converte
 
 Jalankan perintah berikut pada CMD atau terminal
 
-```git clone https://github.com/fikrisyahid/teks-gaya-converter.git```
+```
+git clone https://github.com/fikrisyahid/teks-gaya-converter.git
 
-`cd teks-gaya-converter`
-
-`jika kamu menggunakan npm`
-
-`npm install`
-
-`npm run dev`
-
-jika kamu menggunakan yarn
-
-`yarn`
-
-`yarn dev`
+cd teks-gaya-converter
+```
+Jika kamu menggunakan npm
+```
+npm install
+npm run dev
+```
+Jika kamu menggunakan yarn
+```
+yarn
+yarn dev
+```
 
 Buka `http://localhost:3000` di browser
