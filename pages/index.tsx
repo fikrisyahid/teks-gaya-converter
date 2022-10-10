@@ -5,10 +5,10 @@ import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import MainGrid from "../components/MainGrid";
-import converter from "../utils/converter";
 import Head from "next/head";
 import MenuItem from "@mui/material/MenuItem";
 import Alert from "../components/Alert";
+import { bapackConverter, jametConverter } from "../utils/converter";
 
 const Home: NextPage = () => {
   const [input, setInput] = useState("");
@@ -23,8 +23,12 @@ const Home: NextPage = () => {
       setAlertOpen(true);
       return;
     }
-    const response = converter(input, mode);
-    setOutput(response);
+    if (mode === "bapack2") {
+      setOutput(bapackConverter(input));
+    }
+    if (mode === "jamet") {
+      setOutput(jametConverter(input));
+    }
   };
 
   return (
@@ -51,8 +55,8 @@ const Home: NextPage = () => {
                   <MenuItem value="0" disabled>
                     Pilih mode
                   </MenuItem>
-                  <MenuItem value="1">Bapack2</MenuItem>
-                  <MenuItem value="2">Jamet FB 2009</MenuItem>
+                  <MenuItem value="bapack2">Bapack2</MenuItem>
+                  <MenuItem value="jamet">Jamet FB 2009</MenuItem>
                 </TextField>
               </Grid>
             </Grid>
