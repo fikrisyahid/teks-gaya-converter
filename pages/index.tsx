@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { useEffect, useLayoutEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
@@ -18,14 +18,18 @@ const Home: NextPage = () => {
   const [alertMessage, setAlertMessage] = useState("");
 
   // Get value from session storage
-  useLayoutEffect(() => {
+  useEffect(() => {
     const sessionInput = sessionStorage.getItem("input");
     const sessionOutput = sessionStorage.getItem("output");
+    const sessionMode = sessionStorage.getItem("mode");
     if (sessionInput) {
       setInput(sessionInput);
     }
     if (sessionOutput) {
       setOutput(sessionOutput);
+    }
+    if (sessionMode) {
+      setMode(sessionMode);
     }
   }, []);
 
@@ -33,7 +37,8 @@ const Home: NextPage = () => {
   useEffect(() => {
     sessionStorage.setItem("input", input);
     sessionStorage.setItem("output", output);
-  }, [input, output]);
+    sessionStorage.setItem("mode", mode);
+  }, [input, output, mode]);
 
   const handleConvert = () => {
     if (mode === "0") {
