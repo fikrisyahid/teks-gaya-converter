@@ -24,7 +24,7 @@ const About: NextPage = () => {
               <br />
               GitHub:{" "}
               <a
-                style={{ textDecoration: "none" }}
+                style={{ textDecoration: "none", color: "lightsteelblue" }}
                 href="https://github.com/fikrisyahid"
               >
                 Fikri Syahid
@@ -38,6 +38,7 @@ const About: NextPage = () => {
               href="https://github.com/fikrisyahid/teks-bapak-converter#readme"
               variant="contained"
               color="secondary"
+              sx={{ color: "white", backgroundColor: "#6a329f" }}
             >
               Go to GitHub page
             </Button>

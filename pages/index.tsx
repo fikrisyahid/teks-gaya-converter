@@ -7,10 +7,12 @@ import Button from "@mui/material/Button";
 import MainGrid from "../components/MainGrid";
 import converter from "../utils/converter";
 import Head from "next/head";
+import MenuItem from "@mui/material/MenuItem";
 
 const Home: NextPage = () => {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
+  const [mode, setMode] = useState("0");
 
   const handleConvert = () => {
     const response = converter(input);
@@ -25,6 +27,22 @@ const Home: NextPage = () => {
       <Grid container item>
         <MainGrid>
           <Grid container item mb={3}>
+            <Grid container item justifyContent="center">
+              <Grid item>
+                <TextField
+                  select
+                  value={mode}
+                  onChange={(e) => setMode(e.target.value)}
+                  sx={{ backgroundColor: "#29363f", borderRadius: 3 }}
+                >
+                  <MenuItem value="0" disabled>
+                    Pilih mode
+                  </MenuItem>
+                  <MenuItem value="1">Bapack2</MenuItem>
+                  <MenuItem value="2">Jamet FB 2009</MenuItem>
+                </TextField>
+              </Grid>
+            </Grid>
             <Grid
               container
               item
@@ -35,7 +53,7 @@ const Home: NextPage = () => {
             >
               <Grid container item justifyContent="center">
                 <Grid item>
-                  <Typography variant="h4" fontWeight={700} color="white">
+                  <Typography variant="h4" fontWeight={700}>
                     Input
                   </Typography>
                 </Grid>
@@ -49,7 +67,6 @@ const Home: NextPage = () => {
                   color="primary"
                   onChange={(e) => setInput(e.target.value)}
                   inputProps={{
-                    style: { color: "white" },
                     spellCheck: false,
                   }}
                   sx={{ backgroundColor: "#29363f", borderRadius: 3 }}
@@ -66,7 +83,7 @@ const Home: NextPage = () => {
             >
               <Grid container item justifyContent="center">
                 <Grid item>
-                  <Typography variant="h4" fontWeight={700} color="white">
+                  <Typography variant="h4" fontWeight={700}>
                     Output
                   </Typography>
                 </Grid>
@@ -79,7 +96,6 @@ const Home: NextPage = () => {
                   value={output}
                   onChange={(e) => setOutput(e.target.value)}
                   inputProps={{
-                    style: { color: "white" },
                     spellCheck: false,
                   }}
                   sx={{ backgroundColor: "#29363f", borderRadius: 3 }}
@@ -94,7 +110,7 @@ const Home: NextPage = () => {
                 variant="contained"
                 color="secondary"
                 onClick={handleConvert}
-                sx={{ backgroundColor: "#6a329f" }}
+                sx={{ color: "white", backgroundColor: "#6a329f" }}
               >
                 Convert
               </Button>
