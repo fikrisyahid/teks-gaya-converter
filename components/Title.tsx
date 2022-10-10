@@ -6,7 +6,7 @@ const Title = () => {
   return (
     <Grid container mb={3} justifyContent="center">
       <Typography textAlign="center" variant="h2" fontWeight={700} color="white">
-        Teks Bapak Converter
+        Teks Gaya Converter
       </Typography>
     </Grid>
   );
