@@ -1,20 +1,56 @@
-import bapackWordData from "../../word-data/bapack-word";
 import wordFetcher from "../../word-fetcher";
 
-const bapackConverter = (input: string) => {
+// Array of common emojis
+const commonEmojis: string[] = ["🙏", "😂", "👍", "😎", "🤪"];
+
+// Function to randomize the case of each letter in the word
+const randomCase = (word: string): string => {
+  let result = "";
+  for (let char of word) {
+    result += Math.random() < 0.5 ? char.toUpperCase() : char.toLowerCase();
+  }
+  return result;
+};
+
+const bapackConverter = (input: string): string => {
   let response = "";
   const words = wordFetcher(input);
+
   words.forEach((word) => {
-    const key = word.toLowerCase();
-    if (bapackWordData.words[key]) {
-      const index = Math.floor(Math.random() * bapackWordData.words[key].length);
-      response += bapackWordData.words[key][index];
+    let finalWord = word;
+
+    // Check if the word has "nya" and decide whether to replace it or not
+    if (finalWord.toLowerCase().includes("nya")) {
+      if (Math.random() < 0.5) {
+        // 50% chance to replace "nya"
+        const nyaChoices = ["x", "X"];
+        const nyaChoice =
+          nyaChoices[Math.floor(Math.random() * nyaChoices.length)];
+        finalWord = finalWord.replace(/nya/gi, nyaChoice);
+      }
     }
-    if (!bapackWordData.words[key]) {
-      response += word;
+
+    // Randomize the case of each letter in the word
+    response += randomCase(finalWord);
+
+    // Add random spaces
+    const spaceCount = Math.floor(Math.random() * 3) + 1;
+    response += " ".repeat(spaceCount);
+
+    // Add a random comma sometimes
+    if (Math.random() < 0.2) {
+      const commaCount = Math.floor(Math.random() * 4) + 1;
+      response += ",".repeat(commaCount);
     }
-    response += " ";
+
+    // Add a random emoji sometimes
+    if (Math.random() < 0.3) {
+      const emoji =
+        commonEmojis[Math.floor(Math.random() * commonEmojis.length)];
+      response += `${emoji} `;
+    }
   });
+
   return response;
 };
 
