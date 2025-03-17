@@ -184,7 +184,7 @@ export default function TextConverter() {
         </div>
         <div className="mt-6 flex justify-center">
           <a
-            href="https://github.com/yourusername/text-converter"
+            href="https://github.com/fikrisyahid/teks-gaya-converter"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-sm text-[#9ca3af] hover:text-[#60a5fa] transition-colors"
