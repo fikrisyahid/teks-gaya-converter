@@ -1,16 +1,8 @@
-import wordFetcher from "../../word-fetcher";
+import randomCase from "./random-case";
+import wordFetcher from "./word-fetcher";
 
 // Array of common emojis
 const commonEmojis: string[] = ["🙏", "😂", "👍", "😎", "🤪"];
-
-// Function to randomize the case of each letter in the word
-const randomCase = (word: string): string => {
-  let result = "";
-  for (const char of word) {
-    result += Math.random() < 0.5 ? char.toUpperCase() : char.toLowerCase();
-  }
-  return result;
-};
 
 const bapackConverter = (input: string): string => {
   let response = "";

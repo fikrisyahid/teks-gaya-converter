@@ -10,7 +10,8 @@ import {
   Smile,
   Check,
 } from "lucide-react";
-import { bapackConverter, jametConverter } from "@/utils/converter";
+import bapackConverter from "@/helper/bapack-converter";
+import jametConverter from "@/helper/jamet-converter";
 
 export default function TextConverter() {
   const [inputText, setInputText] = useState("");
@@ -18,7 +19,6 @@ export default function TextConverter() {
   const [mode, setMode] = useState<"bapack" | "jamet">("bapack");
   const [copied, setCopied] = useState(false);
 
-  // Reset copied state after 2 seconds
   useEffect(() => {
     let timeout: NodeJS.Timeout;
     if (copied) {

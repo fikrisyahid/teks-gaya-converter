@@ -1,13 +1,5 @@
-import wordFetcher from "../../word-fetcher"; // Ini asumsi lokasi file, sesuaikan ya
-
-// Function to randomize the case of each letter in the word
-const randomCase = (word: string): string => {
-  let result = "";
-  for (const char of word) {
-    result += Math.random() < 0.5 ? char.toUpperCase() : char.toLowerCase();
-  }
-  return result;
-};
+import randomCase from "./random-case";
+import wordFetcher from "./word-fetcher"; // Ini asumsi lokasi file, sesuaikan ya
 
 const characterSubstitutions: { [key: string]: string[] } = {
   a: ["4", "@"],
